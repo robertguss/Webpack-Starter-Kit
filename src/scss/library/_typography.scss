@@ -1,0 +1,281 @@
+/*
+|--------------------------------------------------------------------------
+| Modular Scale Sizes
+|--------------------------------------------------------------------------
+*/
+// http://www.modularscale.com/?16&px&1.2
+
+$ms-scale-1: 5.16rem;      //   82.556px
+$ms-scale-2: 4.3rem;       //   68.797px
+$ms-scale-3: 3.583rem;     //   57.331px
+$ms-scale-4: 2.986rem;     //   47.776px
+$ms-scale-5: 2.488rem;     //   39.813px
+$ms-scale-6: 2.074rem;     //   33.178px
+$ms-scale-7: 1.728rem;     //   27.648px
+$ms-scale-8: 1.44rem;      //   23.04px
+$ms-scale-9: 1.2rem;       //   19.2px
+$ms-scale-10: 1rem;        //   16px     * This is the base font-size
+$ms-scale-11: 0.833rem;    //   13.333px
+$ms-scale-12: 0.694rem;    //   11.111px
+
+
+$base-line-height: 1.4;
+$margin-bottom: 24px;
+$p-margin-center: 0 auto;
+$vertical-rhythm: 1.4rem;
+
+// vertical rhythm function
+@function vr($multiple) {
+  @return ($base-line-height * $multiple * 1rem);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Root Elements
+|--------------------------------------------------------------------------
+*/
+:root {
+  font-size: 16px;
+}
+
+html {
+  font-size: 100%;
+  line-height:$base-line-height - 0.2; // 1.2
+
+  @include bp-small {
+    line-height: $base-line-height - 0.1; // 1.3
+  }
+
+  @include bp-medium {
+    line-height: $base-line-height - 0.1; // 1.4
+  }
+
+  @include bp-large {
+
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| H1
+|--------------------------------------------------------------------------
+*/
+h1 {
+  font-size: responsive $ms-scale-9 $ms-scale-6;
+  margin: vr(0.5);
+
+  @include bp-small {
+    font-size: responsive $ms-scale-6 $ms-scale-5;
+  }
+
+  @include bp-medium {
+    font-size: responsive $ms-scale-5 $ms-scale-4;
+    margin: vr(1);
+  }
+
+  @include bp-large {
+    font-size: responsive $ms-scale-4 $ms-scale-3;
+    
+  }
+
+  @include bp-xlarge {
+    font-size: responsive $ms-scale-3 $ms-scale-2;
+    margin: vr(1.5);
+  }
+
+  @include bp-full {
+    font-size: $ms-scale-1;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| H2 
+|--------------------------------------------------------------------------
+*/
+h2 {
+  font-size: responsive $ms-scale-10 $ms-scale-7;
+
+  @include bp-small {
+    font-size: responsive $ms-scale-7 $ms-scale-6;
+  }
+
+  @include bp-medium {
+    font-size: responsive $ms-scale-6 $ms-scale-5;
+  }
+
+  @include bp-large {
+    font-size: responsive $ms-scale-5 $ms-scale-4;
+  }
+
+  @include bp-xlarge {
+    font-size: responsive $ms-scale-4 $ms-scale-3;
+  }
+
+  @include bp-full {
+    font-size: $ms-scale-2;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| H3
+|--------------------------------------------------------------------------
+*/
+h3 {
+  font-size: responsive $ms-scale-11 $ms-scale-8;
+
+  @include bp-small {
+    font-size: responsive $ms-scale-8 $ms-scale-7;
+  }
+
+  @include bp-medium {
+    font-size: responsive $ms-scale-7 $ms-scale-6;
+  }
+
+  @include bp-large {
+    font-size: responsive $ms-scale-6 $ms-scale-5;
+  }
+
+  @include bp-xlarge {
+    font-size: responsive $ms-scale-5 $ms-scale-4;
+  }
+
+  @include bp-full {
+    font-size: $ms-scale-3;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| H4
+|--------------------------------------------------------------------------
+*/
+h4 {
+  font-size: responsive $ms-scale-12 $ms-scale-9;
+
+  @include bp-small {
+    font-size: responsive $ms-scale-9 $ms-scale-8;
+  }
+
+  @include bp-medium {
+    font-size: responsive $ms-scale-8 $ms-scale-7;
+  }
+
+  @include bp-large {
+    font-size: responsive $ms-scale-7 $ms-scale-6;
+  }
+
+  @include bp-xlarge {
+    font-size: responsive $ms-scale-6 $ms-scale-5;
+  }
+
+  @include bp-full {
+    font-size: $ms-scale-4;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| H5
+|--------------------------------------------------------------------------
+*/
+h5 {
+  font-size: responsive $ms-scale-12 $ms-scale-10;
+
+  @include bp-small {
+    font-size: responsive $ms-scale-10 $ms-scale-9;
+  }
+
+  @include bp-medium {
+    font-size: responsive $ms-scale-9 $ms-scale-8;
+  }
+
+  @include bp-large {
+    font-size: responsive $ms-scale-8 $ms-scale-7;
+  }
+
+  @include bp-xlarge {
+    font-size: responsive $ms-scale-7 $ms-scale-6;
+  }
+
+  @include bp-full {
+    font-size: $ms-scale-5;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| H6
+|--------------------------------------------------------------------------
+*/
+h6 {
+  font-size: responsive $ms-scale-12 $ms-scale-11;
+
+  @include bp-small {
+    font-size: responsive $ms-scale-11 $ms-scale-10;
+  }
+
+  @include bp-medium {
+    font-size: responsive $ms-scale-10 $ms-scale-9;
+  }
+
+  @include bp-large {
+    font-size: responsive $ms-scale-9 $ms-scale-8;
+  }
+
+  @include bp-xlarge {
+    font-size: responsive $ms-scale-8 $ms-scale-7;
+  }
+
+  @include bp-full {
+    font-size: $ms-scale-6;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Elements & Components
+|--------------------------------------------------------------------------
+*/
+a,
+li,
+p, {
+  font-size: responsive $ms-scale-12 $ms-scale-12;
+
+
+  @include bp-small {
+    font-size: responsive $ms-scale-12 $ms-scale-11;
+  }
+
+  @include bp-medium {
+    font-size: responsive $ms-scale-11 $ms-scale-10;
+  }
+
+  @include bp-large {
+    font-size: responsive $ms-scale-10 $ms-scale-9;
+  }
+}
+
+p {
+  line-height:$base-line-height - 0.1; // 1.3
+  margin: $p-margin-center vr(0.5);
+  max-width: 20rem;
+
+  @include bp-medium {
+    line-height:$base-line-height;
+    margin: $p-margin-center vr(1);
+    max-width: 30rem;
+  }
+
+  @include bp-large {
+    line-height:$base-line-height;
+    max-width: 40rem;
+  }
+
+  @include bp-xlarge {
+    line-height:$base-line-height;
+    margin: $p-margin-center vr(1.5);
+    max-width: 50rem;
+  }
+}

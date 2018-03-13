@@ -1,70 +1,44 @@
-# DNL 2017 Webdev Starter Kit
+# Webpack Starter Kit
 
-This particular starter kit is built using webpack and is used for sole JS projects not Vue.
+> An opinionated starter kit using Webpack 4, SCSS, PostCSS, Browsersync, ESLint (airbnb) & Babel.
 
-## Setting up a new project repository
+Out of the box, this Webpack starter kit comes with several tools and opinionated choices for front-end development projects.
 
-- Clone this repository into your desired folder  `git clone git@bitbucket.org:dnlomnimedia/dnl-2017-webpack-starter-kit-js-only.git YOUR-PROJECT-FOLDER`
-- Remove the link to the starterkit repository: `rm -rf YOUR-PROJECT-FOLDER/.git`
-- Create your new repository in BitBucket, give it a name that follows the [naming conventions](http://intranet.dnlomnimedia.com/articles/repository-standards-best-practices). After the repository is created note the URL-PATH-TO-BITBUCKET-REPOSITORY
-- Go into the starter kit folder `cd YOUR-PROJECT-FOLDER`
-- Initalize a clean git repostiory `git init`
-- Link the code in the folder to the repository created in BitBucket `git remote add origin URL-PATH-TO-BITBUCKET-REPOSITORY`
-- Add you first set of files `git add *`
-- Make the first commit `git commit -m "Checking in clone of starterkit"`, feel free to update the message
-- Push the code to the origin `git push origin master`
+## SCSS
+Scss is the css pre-processor of choice for this kit.
 
+Inside of `scss/libary/_breakpoint.scss` are several mixing for handling responsive media queries with a mobile first approach. The variables for these breakpoints are set inside of `scss/_variables.scss`.
 
-## Build Setup & CLI commands
+## PostCSS
 
-- Make sure node is installed, if not, please download the latest version for your operating system [here](https://nodejs.org/en/).
-- Make sure you have installed both [ESLint](https://eslint.org/) and [sass-lint](https://www.npmjs.com/package/sass-lint) and configured them both properly with your text editor. If you are using Sublime Text, instructions can be found [here](http://intranet.dnlomnimedia.com/articles/sublime-text-packages). The sass-lint config can be found in the [DNL Snippets Repo](https://bitbucket.org/dnlomnimedia/dnl-snippets)
-- After cloning this repo on your machine, ```cd``` into the directory and run the commands below in your terminal.
+PostCSS is included with 3 plugins by default:
 
-``` bash
+* [Autoprefixer](https://github.com/postcss/autoprefixer)
+* [CSS Nano](http://cssnano.co/)
+* [Rucksack](https://www.rucksackcss.org/) - Note: Rucksack is necessary if you plan to take advantage of the `scss/libary/_typography.scss`. This provides reponsive typography out of the box for you. Simply go to [Modular Scale](http://www.modularscale.com/) to create the typographic scale of your choosing and add the values to the variables in the file. Granted, this is a very opinionated way of handling responsive typography, so please customize to your liking. If you have a better method, please submit a pull request 😎
 
-# install dependencies
-npm i
+To add additional plugins, simply `yarn add <post css plugin name here> -D` then add the plugin to `postcss.config.js`. In this config you will note there are 2 `module.exports` one is for production:
 
-# serve with hot reload at localhost:8080
-npm run start
-
-# build for production with minification
-npm run build
-
+```bash
+  yarn build
 ```
 
-## Update Webpack.common.js
-* update key ("dnl-changeme") in entry object (line 6) to follow project [naming conventions](http://intranet.dnlomnimedia.com/articles/file-naming-conventions).
+and the other is for development:
 
-## Update package.json Details
-
-* name
-* title
-* version
-* repository.url
-* siteStatus
-
-## Things to know
-  - __jQuery__ is setup already by default to be included in a global scope. You can just write `$` or `jQuery` in your code and Webpack will pass in global jQuery definition into functions once it sees `$` or `jQuery` in your code. jQuery must be loaded separately in your index.html file or external site.
-
-  - __Style Guide__ - We are utilizing [Airbnb's](https://github.com/airbnb/javascript) style guide for Javascript. This repo is already setup and configured accordingly as long as you have ESLint correctly installed on your machine.
-
-  - __Scss Linting__ -
-
-  - This repo makes use of various webpack plugins. In each webpack config file there are links to the plugins documentation in a comment just above where the plugin is initialized, typically at the very bottom of each config file.
-
-
-# HTML templating:
-* Create/modify the template.html file in `src/html/`
-* Using multiple template files:
-  * Each file must be prefixed with `template`, ex: "`template-test.html`"
-  * Each file needs its own `HtmlWebpackPlugin` reference within the `webpack.dev.js` file's `plugins` (see the comments in plugin object) 
-``` bash
-# reference to another template file:
-    new HtmlWebpackPlugin({
-      hash: true,
-      template: './src/html/template-another-page.html',
-      filename: './preview/another.html' //relative to root of the application
-    })
+```bash
+yarn start
 ```
+
+add your postcss plugin to the correct one accordingly.
+
+## Browsersync
+
+We are using [Browsersync](https://browsersync.io/) for live reload and responsive design/development. The config for browsersync can be found in `webpack.dev.js` around `line 63`.
+
+## ES Lint
+
+This kit is using [Airbnb's ES Lint Configs & Style Guide](https://github.com/airbnb/javascript).
+
+## Babel
+
+Write [future JavaScript](http://babeljs.io/) today!

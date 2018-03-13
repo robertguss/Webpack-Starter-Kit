@@ -4,6 +4,25 @@
 
 Out of the box, this Webpack starter kit comes with several tools and opinionated choices for front-end development projects.
 
+## Installation & Use
+
+```bash
+  # Git Clone this repo, where 'my-project' is the name of your project
+  git clone git@github.com:robertguss/Webpack-Starter-Kit.git my-project
+
+  # cd into the repo's diectory
+  cd my-project
+
+  # install NPM modules
+  yarn
+
+  # start development server
+  yarn start
+
+  #build for production
+  yarn build
+```
+
 ## SCSS
 Scss is the css pre-processor of choice for this kit.
 

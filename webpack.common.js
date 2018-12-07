@@ -5,17 +5,17 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    'dnl-changeme': './src/js/index.js'
+    changeme: './src/js/index.js',
   },
   externals: {
-    jquery: 'jQuery'
+    jquery: 'jQuery',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -24,27 +24,27 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'images/'
-            }
-          }
-        ]
-      }
-    ]
+              outputPath: 'images/',
+            },
+          },
+        ],
+      },
+    ],
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
     // https://github.com/johnagan/clean-webpack-plugin
     new CleanWebpackPlugin(['dist']),
     // https://github.com/webpack-contrib/extract-text-webpack-plugin
-    new ExtractTextPlugin('dnl-changeme.css'),
+    new ExtractTextPlugin('changeme.css'),
     // Set jQuery in global scope
     // https://webpack.js.org/plugins/provide-plugin/
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery'
-    })
-  ]
+      jQuery: 'jquery',
+    }),
+  ],
 };

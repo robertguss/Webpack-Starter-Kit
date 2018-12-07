@@ -1,17 +1,16 @@
 if (process.env.NODE_ENV === 'production') {
   module.exports = {
     plugins: {
-      'autoprefixer': {},
-      'cssnano': {},
-      'rucksack-css': {}
-    }
+      autoprefixer: {},
+      cssnano: {},
+      'rucksack-css': {},
+    },
   };
-}
-else {
+} else {
   module.exports = {
     plugins: {
-      'autoprefixer': {},
-      'rucksack-css': {}
-    }
+      autoprefixer: {},
+      'rucksack-css': {},
+    },
   };
 }

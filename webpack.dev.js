@@ -34,7 +34,7 @@ module.exports = merge(common, {
         }),
       },
       {
-        test: /\.scss$/,
+        test: /\.less$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -46,7 +46,7 @@ module.exports = merge(common, {
               },
             },
             { loader: 'postcss-loader', options: { sourceMap: true } },
-            { loader: 'sass-loader', options: { sourceMap: true } },
+            { loader: 'less-loader', options: { sourceMap: true } },
             { loader: 'import-glob-loader' },
           ],
         }),

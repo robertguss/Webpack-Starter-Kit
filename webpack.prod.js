@@ -15,13 +15,13 @@ module.exports = merge(common, {
         }),
       },
       {
-        test: /\.scss$/,
+        test: /\.less$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
             { loader: 'css-loader' },
             { loader: 'postcss-loader' },
-            { loader: 'sass-loader' },
+            { loader: 'less-loader' },
             { loader: 'import-glob-loader' },
           ],
         }),

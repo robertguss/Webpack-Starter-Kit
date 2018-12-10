@@ -1,5 +1,6 @@
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const WriteFilePlugin = require('write-file-webpack-plugin');
@@ -54,6 +55,8 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
+    // https://www.npmjs.com/package/html-webpack-plugin
+    new HtmlWebpackPlugin(),
     // https://www.npmjs.com/package/webpack-notifier
     new WebpackNotifierPlugin(),
     // https://github.com/gajus/write-file-webpack-plugin

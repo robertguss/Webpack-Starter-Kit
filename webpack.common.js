@@ -1,14 +1,9 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    changeme: './src/js/index.js',
-  },
-  externals: {
-    jquery: 'jQuery',
+    app: './src/js/index.js',
   },
   module: {
     rules: [
@@ -37,14 +32,6 @@ module.exports = {
   },
   plugins: [
     // https://github.com/johnagan/clean-webpack-plugin
-    new CleanWebpackPlugin(['dist']),
-    // https://github.com/webpack-contrib/extract-text-webpack-plugin
-    new ExtractTextPlugin('changeme.css'),
-    // Set jQuery in global scope
-    // https://webpack.js.org/plugins/provide-plugin/
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-    }),
+    new CleanWebpackPlugin(),
   ],
 };

@@ -40,7 +40,7 @@
     "eslint-plugin-import": "^2.14.0",
     "file-loader": "^2.0.0",
     "html-loader": "^0.5.5",
-    "node-sass": "^4.10.0",
+    "node-sass": "^4.13.1",
     "postcss-loader": "^3.0.0",
     "rucksack-css": "^1.0.2",
     "sass-loader": "^7.1.0",
